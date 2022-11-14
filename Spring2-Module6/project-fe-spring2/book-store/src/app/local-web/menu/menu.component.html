@@ -1,0 +1,72 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col">
+        <a class="navbar-brand" href="index.html">TuanNC_CO422G1</a>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <div class="social-media">
+          <div class="mb-0 d-flex">
+            <button class="btn" type="submit" style="margin-right: 5px">
+              <i class="bi-cart-fill me-1"></i>
+              Cart
+              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            </button>
+            <div class="dropdown" [hidden]="isLoggedIn">
+              <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Chưa đăng nhập</span><i class="fa fa-user"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Đăng ký</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" routerLink="/login" href="#">Đăng nhâp</a></li>
+              </ul>
+            </div>
+            <div class="dropdown" [hidden]="!isLoggedIn">
+              <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Tài khoản:{{username}}</span><i class="fa fa-user"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page1</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page2</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page3</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" (click)="logOut()" href="#">Đăng xuất</a></li>
+              </ul>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <form action="#" class="searchform order-lg-last" style="margin: 10px;">
+        <div class="form-group d-flex">
+          <input type="text" class="form-control pl-3" placeholder="Search">
+          <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+        </div>
+      </form>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a href="#" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DANH MỤC SÁCH</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="#">Page 1</a>
+              <a class="dropdown-item" href="#">Page 2</a>
+              <a class="dropdown-item" href="#">Page 3</a>
+              <a class="dropdown-item" href="#">Page 4</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">SÁCH BÁN CHẠY</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">CHƯƠNG TRÌNH KHUYẾN MÃI</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">GIẢM GIÁ ĐẶC BIỆT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+</section>
