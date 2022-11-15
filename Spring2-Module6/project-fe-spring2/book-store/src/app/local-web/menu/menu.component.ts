@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "../../service/token-storage.service";
 import {ShareService} from "../../service/share.service";
+import {Subscription} from "rxjs";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -10,25 +12,27 @@ import {ShareService} from "../../service/share.service";
 export class MenuComponent implements OnInit {
 
   username: string;
-  idPatient: number;
+  // idPatient: number;
   currentUser: string;
   role: string;
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean;
+
 
   constructor(private tokenStorageService: TokenStorageService,
-              private shareService : ShareService) {
-   shareService.currentLoginStatus.subscribe(status => {
-     this.isLoggedIn = status;
-   })
+              private shareService: ShareService,
+              private router: Router) {
+    this.shareService.currentLoginStatus.subscribe(status => {
+      this.isLoggedIn = status;
+    })
   }
 
   loadHeader(): void {
-    if (this.tokenStorageService.getToken()) {
-      this.currentUser = this.tokenStorageService.getUser().username;
+    if (this.tokenStorageService.getToken() != undefined) {
+      this.currentUser = this.tokenStorageService.getUser().userName;
       this.role = this.tokenStorageService.getUser().roles[0];
-      this.username = this.tokenStorageService.getUser().username;
+      this.username = this.tokenStorageService.getUser().userName;
     }
-    this.isLoggedIn = this.username != null;
+    this.isLoggedIn = this.username != undefined;
     this.getUsernameAccount();
   }
 
@@ -39,12 +43,13 @@ export class MenuComponent implements OnInit {
 
   logOut() {
     this.tokenStorageService.signOut();
-    this.ngOnInit();
+    this.shareService.changeLoginStatus(false);
+    this.router.navigateByUrl("")
   }
 
-  getUsernameAccount(){
+  getUsernameAccount() {
     if (this.tokenStorageService.getToken()) {
-      this.idPatient = this.tokenStorageService.getUser().patient.patientId;
+      // this.idPatient = this.tokenStorageService.getUser().patient.patientId;
     }
   }
 }

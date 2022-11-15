@@ -12,7 +12,7 @@
               Cart
               <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
             </button>
-            <div class="dropdown" [hidden]="isLoggedIn">
+            <div class="dropdown" *ngIf="!isLoggedIn">
               <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>Chưa đăng nhập</span><i class="fa fa-user"></i>
               </a>
@@ -21,7 +21,7 @@
                 <li class = "dropdow-bg"><a class="dropdown-item" routerLink="/login" href="#">Đăng nhâp</a></li>
               </ul>
             </div>
-            <div class="dropdown" [hidden]="!isLoggedIn">
+            <div class="dropdown" *ngIf="isLoggedIn">
               <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>Tài khoản:{{username}}</span><i class="fa fa-user"></i>
               </a>
@@ -29,7 +29,7 @@
                 <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page1</a></li>
                 <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page2</a></li>
                 <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page3</a></li>
-                <li class = "dropdow-bg"><a class="dropdown-item" (click)="logOut()" href="#">Đăng xuất</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" (click)="logOut()">Đăng xuất</a></li>
               </ul>
             </div>
         </div>

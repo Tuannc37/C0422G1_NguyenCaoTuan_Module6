@@ -3,7 +3,7 @@ import {AppRole} from "./app-role";
 
 export interface Account {
   id?: number;
-  username?: string;
+  userName?: string;
   password?: string;
   appUser?: AppUser;
   appRoles?: AppRole;
