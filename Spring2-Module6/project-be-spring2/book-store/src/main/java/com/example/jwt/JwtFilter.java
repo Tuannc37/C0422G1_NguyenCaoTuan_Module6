@@ -1,6 +1,6 @@
 package com.example.jwt;
 
-import com.example.service.AccountDetailsService;
+import com.example.service.impl.AccountDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -12,6 +12,8 @@ export interface Book {
   imageUrl?: string;
   summary?: string;
   quantity?: string;
+  price?: string;
+  releaseDate?: string;
   author?: Author;
   categories?:Category;
 }

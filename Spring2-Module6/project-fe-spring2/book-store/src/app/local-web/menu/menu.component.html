@@ -23,13 +23,13 @@
             </div>
             <div class="dropdown" *ngIf="isLoggedIn">
               <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                <span>Tài khoản:{{username}}</span><i class="fa fa-user"></i>
+                Tài khoản:<span style="font-weight: bold;margin: 0 5px">{{username}}</span><i class="fa fa-user"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page1</a></li>
-                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page2</a></li>
-                <li class = "dropdow-bg"><a class="dropdown-item" href="#">Page3</a></li>
-                <li class = "dropdow-bg"><a class="dropdown-item" (click)="logOut()">Đăng xuất</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#"><i class="fa-sharp fa-solid fa-barcode m-1"></i>Thông tin cá nhân</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" href="#"><i class="fa-brands fa-searchengin me-1"></i> Lịch sử đặt hàng</a></li>
+                <li class = "dropdow-bg" *ngIf="this.role.includes('ROLE_ADMIN')"><a class="dropdown-item" href="#"><i class="fa-solid fa-list me-1"></i>Quản lý danh sách</a></li>
+                <li class = "dropdow-bg"><a class="dropdown-item" (click)="logOut()"><i class="fa-solid fa-right-from-bracket me-1"></i>Đăng xuất</a></li>
               </ul>
             </div>
         </div>

@@ -37,6 +37,10 @@ public class Book {
 
     private Integer quantity;
 
+    private String releaseDate;
+
+    private String price;
+
     @ManyToOne
     @JoinColumn(name = "author_id",referencedColumnName = "id")
     private Author author;

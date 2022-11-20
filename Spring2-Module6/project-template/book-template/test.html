@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:#d0e9b3;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+        .card{
+            margin-top: 120px;
+            background-color: #04081a;
+            height: 450px;
+            border-radius: 15px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            }
+            .card_heart, .card_cart{
+                font-size: 25px;
+                position: absolute;
+                left: 20px;
+                top: 15px;
+            }
+            .card_cart{
+                left: unset;
+                right: 20px;
+            }
+            .card_img{
+                width: 90%;
+                margin: 0 auto;
+                transition: 0.7s;
+            }
+            .card_img img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .card_title, .card_price{
+                font-size: 18px;
+                text-align: center;
+                transition: 0.5s;
+            }
+
+            .card_title{
+                margin-top: 5px;
+                color: #15cb75;
+            }
+
+            .card_size, .card_color{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+
+            .card_size span{
+                padding: 1px 10px;
+                background: white;
+                color: black;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+            .card_color span{
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+            .card_action button{
+                background-color: #1ec677;
+                border: none;
+                outline: none;
+                color: white;
+                border-radius: 5px;
+                margin-right: 5px;
+                cursor: pointer;
+                padding: 0 5px;
+            }
+
+            .card_action button:hover{
+               transform: scale(0.9);
+            }
+
+            .card:hover .card_img{
+                transform:translateY(-120px);
+            }
+
+            .card:hover .card_title, .card:hover .card_price{
+                transform:translateY(-110px);
+            }
+
+            .card:hover .card_size, .card:hover .card_color, .card:hover .card_action{
+                transform:translateY(-70px);
+            }
+
+            .card_size, .card_color, .card_action{
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            .card:hover .card_size{
+                margin-top: -30px;
+            }
+
+            .card:hover .card_size, .card:hover .card_color, .card:hover .card_action{
+                visibility: visible;
+                opacity: 100;
+                transition: 0.5s;
+            }
+
+</style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card_heart"><i class='bx bxs-heart'></i></div>
+                    <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+                    <div class="card_img"><img src="http://baokhanhhoa.vn/dataimages/201707/original/images5303924_BS1.jpg" alt=""></div>
+                    <div class="card_title">Văn học Việt Nam</div>
+                    <div class="card_price">Giá :<span style="color: red">40.000đ</span></div>
+                    <div class="card_size">
+                        <h5>Size:</h5>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+                    <div class="card_color">
+                        <h5>Color:</h5>
+                        <span class="card_color_green" style="background-color: green"></span>
+                        <span class="card_color_red" style="background-color: red"></span>
+                        <span class="card_color_black" style="background-color: black"></span>
+                    </div>
+                    <div class="card_action btn-group" role="group">
+                        <button type="button">Chi tiết</button>
+                        <button type="button">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
