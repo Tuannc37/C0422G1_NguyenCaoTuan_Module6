@@ -4,6 +4,7 @@ import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
 import {Book} from "../model/book";
 import {TokenStorageService} from "../service/token-storage.service";
+import {ShareService} from "../service/share.service";
 
 @Component({
   selector: 'app-homepage',
@@ -16,12 +17,20 @@ export class HomepageComponent implements OnInit {
   totalPage: number;
   bookList: Book[] = [];
   role: string;
+  isLoggedIn: boolean;
+  p = 1;
 
-  constructor(private bookService: BookService,private toast:ToastrService, private router: Router,private tokenStorageService: TokenStorageService) { }
+  constructor(private bookService: BookService,private shareService: ShareService,
+              private toast:ToastrService, private router: Router,
+              private tokenStorageService: TokenStorageService) {
+    this.shareService.currentLoginStatus.subscribe(status => {
+      this.isLoggedIn = status;
+    })
+  }
 
   ngOnInit(): void {
     this.searchAndListBook();
-    this.role = this.tokenStorageService.getUser().roles[0];
+    this.role = this.tokenStorageService.getUser() ? this.tokenStorageService.getUser().roles[0] : null;
   }
 
   searchAndListBook() {

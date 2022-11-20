@@ -14,6 +14,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {NgxUiLoaderHttpModule} from "ngx-ui-loader";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {NgxUiLoaderHttpModule} from "ngx-ui-loader";
         preventDuplicates: true
       }
     ),
+    NgxPaginationModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true
     }),
