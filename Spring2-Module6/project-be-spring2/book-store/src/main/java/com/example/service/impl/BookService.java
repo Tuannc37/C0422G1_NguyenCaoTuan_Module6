@@ -15,6 +15,7 @@ public class BookService implements IBookService {
 
     @Override
     public Page<Book> findAllAndSearchTitleBook(String name, Pageable pageable) {
-        return iBookReponsitory.findByTitleContaining(name,pageable);
+        return iBookReponsitory.findByTitleContainingOrderByReleaseDateDesc(name,pageable);
     }
+
 }

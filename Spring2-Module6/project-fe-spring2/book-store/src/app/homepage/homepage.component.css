@@ -34,8 +34,8 @@ body{
   transition: 0.7s;
 }
 .card_img img{
-  width: 100%;
-  height: 100%;
+  max-width: 200px;
+  max-height: 300px;
   object-fit: cover;
 }
 .card_title, .card_price{
@@ -153,4 +153,5 @@ span.text-info {
 label {
   font-weight: 700;
 }
+
 

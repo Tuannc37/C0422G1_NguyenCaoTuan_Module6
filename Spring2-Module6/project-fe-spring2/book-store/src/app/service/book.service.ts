@@ -20,4 +20,8 @@ export class BookService {
   findByAllAndSearchTitleBook(name: string, page: number): Observable<any> {
     return this.httpClient.get<Book[]>(SERVICE_URL + "/api/public/user/list?name=" + name + "&page=" + page, this.auth.getToken());
   }
+
+  findAllAndSortBook(page:number): Observable<any>{
+    return this.httpClient.get<Book[]>(SERVICE_URL + "/api/public/sortReleaseDate/list?page=" + page, this.auth.getToken());
+  }
 }
