@@ -3,6 +3,8 @@ import {TokenStorageService} from "../../service/token-storage.service";
 import {ShareService} from "../../service/share.service";
 import {Subscription} from "rxjs";
 import {Route, Router} from "@angular/router";
+import {DataService} from "../../service/data.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-menu',
@@ -16,11 +18,12 @@ export class MenuComponent implements OnInit {
   currentUser: string;
   role: string;
   isLoggedIn: boolean;
+  totalQuantity: any = 0;
 
 
   constructor(private tokenStorageService: TokenStorageService,
               private shareService: ShareService,
-              private router: Router) {
+              private router: Router,private dataService: DataService ) {
     this.shareService.currentLoginStatus.subscribe(status => {
       this.isLoggedIn = status;
     })
@@ -38,6 +41,9 @@ export class MenuComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.dataService.getData.subscribe((result: any) => {
+      this.totalQuantity = parseInt(result.quantity, 10);
+    });
     this.loadHeader();
   }
 
@@ -51,5 +57,9 @@ export class MenuComponent implements OnInit {
     if (this.tokenStorageService.getToken()) {
       // this.idPatient = this.tokenStorageService.getUser().patient.patientId;
     }
+  }
+
+  alertLogin() {
+    Swal.fire('Thông Báo !!', 'Bạn cần đăng nhập hoặc tạo tài khoản để mua hàng!', 'success')
   }
 }

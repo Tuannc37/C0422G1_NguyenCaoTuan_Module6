@@ -5,6 +5,9 @@ import {Router} from "@angular/router";
 import {Book} from "../model/book";
 import {TokenStorageService} from "../service/token-storage.service";
 import {ShareService} from "../service/share.service";
+import Swal from "sweetalert2";
+import {DataService} from "../service/data.service";
+import {CartService} from "../service/cart.service";
 
 @Component({
   selector: 'app-homepage',
@@ -19,9 +22,10 @@ export class HomepageComponent implements OnInit {
   role: string;
   isLoggedIn: boolean;
   p = 1;
+  carts: any = this.bookService.getCart();
 
-  constructor(private bookService: BookService,private shareService: ShareService,
-              private toast:ToastrService, private router: Router,
+  constructor(private bookService: BookService,private shareService: ShareService, private cartService: CartService,
+              private toast:ToastrService, private router: Router,private dataService: DataService,
               private tokenStorageService: TokenStorageService) {
     this.shareService.currentLoginStatus.subscribe(status => {
       this.isLoggedIn = status;
@@ -74,4 +78,28 @@ export class HomepageComponent implements OnInit {
     })
   }
 
+  onAddToCart(book: any) {
+    const index = this.carts.findIndex((item: any) => {
+      return item.id === book.id;
+    });
+
+    if (index >= 0) {
+      this.carts[index].quantity += 1;
+    } else {
+      const cartItem: any = {
+        id: book.id,
+        name: book.title,
+        price: book.price,
+        quantity: 1,
+        image: book.imageUrl,
+      };
+      this.carts.push(cartItem);
+    }
+
+    this.cartService.saveCart(this.carts);
+    this.dataService.changeData({
+      quantity: this.cartService.getTotalQuantity()
+    });
+    Swal.fire('Thông Báo !!', 'Thêm Vào Giỏ Hàng Thành Công', 'success').then();
+  }
 }

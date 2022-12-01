@@ -7,11 +7,17 @@
       <div class="col d-flex justify-content-end">
         <div class="social-media">
           <div class="mb-0 d-flex">
-            <button class="btn" type="submit" style="margin-right: 5px">
-              <i class="bi-cart-fill me-1"></i>
+            <button class="btn" type="submit" (click) = alertLogin() style="margin-right: 5px" *ngIf="!isLoggedIn" routerLink="/login">
+              <i class="bi-cart-fill me-1" matTooltip="Giỏ Hàng"></i>
               Cart
-              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+              <span style="color: red" class="badge bg-dark ms-1 rounded-pill">{{totalQuantity}}</span>
             </button>
+            <button class="btn" type="submit" style="margin-right: 5px" *ngIf="isLoggedIn" routerLink="/cart">
+              <i class="bi-cart-fill me-1" matTooltip="Giỏ Hàng"></i>
+              Cart
+              <span style="color: red" class="badge bg-dark ms-1 rounded-pill">{{totalQuantity}}</span>
+            </button>
+
             <div class="dropdown" *ngIf="!isLoggedIn">
               <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>Chưa đăng nhập</span><i class="fa fa-user"></i>
@@ -51,7 +57,7 @@
       </form>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a href="#" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item active"><a routerLink="" class="nav-link">TRANG CHỦ</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DANH MỤC SÁCH</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">

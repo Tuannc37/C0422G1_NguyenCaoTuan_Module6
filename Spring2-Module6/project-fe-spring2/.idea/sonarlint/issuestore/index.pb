@@ -1,0 +1,23 @@
+
+Z
+*book-store/src/app/service/data.service.ts,5\a\5acb59ca06212229083778120b1b2b781b728e11
+a
+1book-store/src/app/homepage/homepage.component.ts,1\a\1a83ab7045fe8986507df8a0a9d4aa2ee2fee95d
+Y
+)book-store/src/app/cart/cart.component.ts,0\6\06eab8c117a4c8ad413d8c806b27331ba9b73310
+^
+.book-store/src/app/cart/cart.component.spec.ts,8\c\8c8a00bde3b0ede5d9c02bc52743d9d0654c82b3
+Z
+*book-store/src/app/service/cart.service.ts,4\c\4c4fd3ab194d156aa55b9bf083ac5b2428c64e02
+[
++book-store/src/app/cart/cart.component.html,6\c\6cc3658f59bd58ea0c57928bc511e867553f4249
+c
+3book-store/src/app/local-web/menu/menu.component.ts,3\d\3df245866fe519ba02b8c1912d84fc14ddd77f81
+[
++book-store/src/app/login/login.component.ts,2\2\225be5587a1ca55638d1331c48bb3c67eb7187e7
+P
+ book-store/src/app/app.module.ts,e\a\ead8b1f32c7cf3fa0fcafba35321492243010610
+e
+5book-store/src/app/local-web/menu/menu.component.html,a\9\a9a9af4c384425a6813f67d3133c686a1ff72f81
+I
+book-store/src/index.html,0\9\09867c198e7ec497ed34c489c965a8529e293d4c

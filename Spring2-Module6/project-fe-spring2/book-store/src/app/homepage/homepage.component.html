@@ -55,7 +55,7 @@
                    style="border-bottom-color: unset;background-color: rgb(219 211 214);">
           </div>
           <div class="col-md-4 searchName">
-            <button class="btn" type="submit"><span class="bi bi-search red-color"></span></button>
+            <button class="btn search_name" type="submit"><span class="bi bi-search red-color"></span></button>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
     <div class="col-md-3" *ngFor="let item of bookList,index as i">
       <div class="card">
         <div class="card_heart"><i class='bx bxs-heart'></i></div>
-        <div class="card_cart"><i class='bx bxs-cart-add'></i></div>
+        <div class="card_cart"><button class="btn btn-danger">{{item.sale}}%</button></div>
         <div class="card_img"><img src="{{item.imageUrl}}" alt=""></div>
         <div class="card_title">{{item.title}}</div>
         <div class="card_price">Giá :<span style="color: red">{{item.price}}đ</span></div>
@@ -78,7 +78,8 @@
 
         <div class="card_action btn-group" role="group" *ngIf="!isLoggedIn">
           <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-          <button type="button">Thêm vào giỏ hàng</button>
+          <button type="button" (click)="onAddToCart(item)"
+                  matTooltip="Thêm Vào Giỏ Hàng">Thêm vào giỏ hàng</button>
         </div>
         <div class="card_action btn-group" role="group" *ngIf="isLoggedIn">
           <button type="button"><i class="fa-solid fa-circle-info"></i></button>

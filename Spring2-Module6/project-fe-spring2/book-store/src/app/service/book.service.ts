@@ -24,4 +24,13 @@ export class BookService {
   findAllAndSortBook(page:number): Observable<any>{
     return this.httpClient.get<Book[]>(SERVICE_URL + "/api/public/sortReleaseDate/list?page=" + page, this.auth.getToken());
   }
+
+  getCart() {
+    const cartJson = sessionStorage.getItem('cart');
+    if (cartJson) {
+      return JSON.parse(cartJson);
+    } else {
+      return [];
+    }
+  }
 }
