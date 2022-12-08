@@ -25,7 +25,7 @@ export class CartService {
     const carts = this.getCart();
     let total = 0;
     carts.forEach((item: any) => {
-      total += item.quantity * item.price;
+      total += item.quantity * item.price * 1000;
     });
     return total;
   }

@@ -15,7 +15,6 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
   username: string;
-  errorMessage = '';
   roles: string[] = [];
   returnUrl: string;
   checkLogin: boolean = false;

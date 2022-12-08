@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "../../service/token-storage.service";
 import {ShareService} from "../../service/share.service";
-import {Subscription} from "rxjs";
 import {Route, Router} from "@angular/router";
 import {DataService} from "../../service/data.service";
 import Swal from "sweetalert2";

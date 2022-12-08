@@ -5,8 +5,9 @@ import {Book} from "../model/book";
 import {CartService} from "../service/cart.service";
 import {TokenStorageService} from "../service/token-storage.service";
 import {Title} from "@angular/platform-browser";
-import {render} from "creditcardpayments/creditCardPayments";
+
 import {CartDetailsService} from "../service/cart-details.service";
+import {render} from "creditcardpayments/creditCardPayments";
 
 @Component({
   selector: 'app-cart',
@@ -43,7 +44,7 @@ export class CartComponent implements OnInit {
   }
 
   total(cart: any) {
-    return cart.quantity * cart.price;
+    return cart.quantity * cart.price * 1000;
   }
 
   updateQuantity(index: number, event: any) {
@@ -109,7 +110,7 @@ export class CartComponent implements OnInit {
   }
 
   payment() {
-    document.getElementById('paypal').innerHTML = '<div id="btnPayPal"></div>';
+    document.getElementById('paypal').innerHTML = "";
     const username = this.tokenStorageService.getUser().username;
     render({
       id: '#paypal',
