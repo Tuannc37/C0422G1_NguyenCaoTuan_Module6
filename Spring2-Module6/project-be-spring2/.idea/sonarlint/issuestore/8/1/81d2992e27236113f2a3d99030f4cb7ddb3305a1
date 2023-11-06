@@ -11,3 +11,5 @@ Q
 java:S1068("/Remove this unused "releaseDate" private field.(Ù‚ôÝþÿÿÿÿ8žÙ±×È0
 K
 java:S1068*")Remove this unused "price" private field.(†ùŠÿúÿÿÿÿ8ŸÙ±×È0
+J
+java:S1068,"(Remove this unused "sale" private field.(€å´§þÿÿÿÿ8™½œºë0

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liên kết Twitter theo thứ tự ngẫu nhiên</title>
+    <style>
+        /* CSS để trang trí giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .links-column {
+            column-count: 1;
+        }
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Liên kết Twitter theo thứ tự ngẫu nhiên</h1>
+    <p>Nhập danh sách các liên kết Twitter cần xử lý:</p>
+    <textarea id="linksTextarea" rows="10" style="width: 100%;" placeholder="Dán liên kết ở đây..."></textarea>
+    <input id="usernameInput" type="text" placeholder="Tên của bạn">
+    <button id="processButton">Xử lý</button>
+    <h2>Kết quả:</h2>
+    <ul class="links-column" id="result"></ul>
+</div>
+
+<script>
+
+    document.getElementById("processButton").addEventListener("click", function() {
+        var linksTextarea = document.getElementById("linksTextarea");
+        var usernameInput = document.getElementById("usernameInput");
+        var result = document.getElementById("result");
+
+        var links = linksTextarea.value.split('\n').filter(link => link.trim() !== '');
+        var username = usernameInput.value;
+
+        links = links.filter(link => !link.includes(username));
+
+        for (var i = links.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = links[i];
+            links[i] = links[j];
+            links[j] = temp;
+        }
+
+        result.innerHTML = '';
+
+        links.forEach(function(link) {
+            var listItem = document.createElement("li");
+            listItem.textContent = link;
+            result.appendChild(listItem);
+        });
+    });
+</script>
+</body>
+</html>

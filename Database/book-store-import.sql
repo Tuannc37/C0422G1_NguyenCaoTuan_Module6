@@ -1,3 +1,5 @@
+use book_store;
+
 -- --------------------------- Thành phố -------------------------------------
  
 INSERT INTO `book_store`.`city` (`id`, `name`) VALUES ('1', 'Hà Nội');
@@ -894,16 +896,16 @@ INSERT INTO `book_store`.`app_user` (`email`, `name`, `phone`, `address_id`) VAL
 INSERT INTO `book_store`.`app_user` (`email`, `name`, `phone`, `address_id`) VALUES ('jhghghghghghg@gmail.com', 'Lê Thị Nở', '0333222356', '10');
 
 -- ------------------------- account ----------------------------------------
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user1', '1');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user2', '2');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'longdeptrai', '3');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user4', '4');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user5', '5');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user6', '6');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user7', '7');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user8', '8');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user9', '9');
-INSERT INTO `book_store`.`account` (`password`, `user_name`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user10', '10');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user1', '1');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user2', '2');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'longdeptrai', '3');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user4', '4');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user5', '5');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user6', '6');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user7', '7');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user8', '8');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user9', '9');
+INSERT INTO `book_store`.`account` (`password`, `username`, `user_id`) VALUES ('$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 'user10', '10');
 
 
 --  --------------------- account_role ----------------------------------------------
@@ -1054,33 +1056,34 @@ INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '
 INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '21');
 INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '21');
 INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '22');
+INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '22');
 
 
 -- -------------------------- cart ----------------------------------------------
 
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('1');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('2');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('3');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('4');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('5');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('6');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('7');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('8');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('9');
-INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('10');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('1');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('2');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('3');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('4');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('5');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('6');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('7');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('8');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('9');
+-- INSERT INTO `book_store`.`cart` (`account_id`) VALUES ('10');
  
 -- ---------------- cart detail -----------------------------
 
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('2', '1', '1');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('3', '2', '2');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('1', '6', '1');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('5', '3', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('2', '2', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('1', '1', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('1', '12', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('3', '20', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('1', '16', '3');
-INSERT INTO `book_store`.`cart_details` (`quantity`, `book_id`, `cart_id`) VALUES ('4', '11', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('2', '1', '1');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('3', '2', '2');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('1', '6', '1');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('5', '3', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('2', '2', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('1', '1', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('1', '12', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('3', '20', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('1', '16', '3');
+INSERT INTO `book_store`.`cart_detail` (`quantity`, `book_id`, `account_id`) VALUES ('4', '11', '3');
  
 -- ------------------------- invoice -------------------------
 
@@ -1089,5 +1092,5 @@ INSERT INTO `book_store`.`invoice` (`code`, `date`, `account_id`) VALUES ('HD-3-
 
 -- ------------------------ invoice detail -------------------------------------------------------------  
 
-INSERT INTO `book_store`.`invoice_details` (`quantity`, `book_id`, `invoice_id`) VALUES ('2', '8', '1');
-INSERT INTO `book_store`.`invoice_details` (`quantity`, `book_id`, `invoice_id`) VALUES ('2', '4', '2');
+INSERT INTO `book_store`.`invoice_detail` (`quantity`, `book_id`, `invoice_id`) VALUES ('2', '8', '1');
+INSERT INTO `book_store`.`invoice_detail` (`quantity`, `book_id`, `invoice_id`) VALUES ('2', '4', '2');
